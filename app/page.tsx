@@ -72,17 +72,36 @@ export default function Home() {
                 Warwick Quick Tyres - Your trusted local garage for all vehicle needs. 
                 Open 7 days a week with expert service and competitive prices.
               </p>
+              {/* After Hours Button - Highlighted */}
+              <div className="flex justify-center mb-6">
+                <a
+                  href="tel:07578767977"
+                  className="relative inline-flex items-center justify-center space-x-3 bg-red-600 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:bg-red-700 transition-all duration-300 transform hover:scale-105 animate-pulse border-2 border-red-700"
+                  style={{
+                    boxShadow: '0 10px 40px rgba(220, 38, 38, 0.5), 0 0 20px rgba(220, 38, 38, 0.3)',
+                    animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                  }}
+                >
+                  <FaClock className="text-2xl" />
+                  <div className="flex flex-col items-start">
+                    <span className="text-xl font-extrabold">24/7 EMERGENCY and AFTER HOURS BOOKING</span>
+                  </div>
+                  <div className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center animate-bounce">
+                    !
+                  </div>
+                </a>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <a
                   href="tel:07578767977"
-                  className="bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2"
+                  className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors flex items-center justify-center space-x-2"
                 >
                   <FaPhone />
                   <span>Call Now: 07578 767977</span>
                 </a>
                 <a
                   href="tel:07846822488"
-                  className="bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2"
+                  className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors flex items-center justify-center space-x-2"
                 >
                   <FaPhone />
                   <span>Call Now: 07846 822488</span>
@@ -93,26 +112,6 @@ export default function Home() {
                 >
                   View Services
                 </Link>
-              </div>
-              {/* After Hours Button - Highlighted */}
-              <div className="flex justify-center mt-6">
-                <a
-                  href="tel:07578767977"
-                  className="relative inline-flex items-center justify-center space-x-3 bg-primary text-black px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 animate-pulse border-2 border-primary-dark"
-                  style={{
-                    boxShadow: '0 10px 40px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3)',
-                    animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                  }}
-                >
-                  <FaClock className="text-2xl" />
-                  <div className="flex flex-col items-start">
-                    <span className="text-xl font-extrabold">After Hours Booking</span>
-                    <span className="text-sm font-semibold opacity-90">Available 24/7</span>
-                  </div>
-                  <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center animate-bounce">
-                    !
-                  </div>
-                </a>
               </div>
             </div>
             <div className="relative h-64 lg:h-96 flex items-center justify-center">
