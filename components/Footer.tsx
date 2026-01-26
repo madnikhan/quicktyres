@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaStar } from 'react-icons/fa'
 
 export default function Footer() {
   return (
@@ -13,6 +13,22 @@ export default function Footer() {
               Professional tyre fitting and car mechanic services in Warwick. 
               Open 7 days a week for all your vehicle needs.
             </p>
+            {/* Google Rating Badge */}
+            <a
+              href="https://www.google.com/search?client=ms-android-samsung-ss&hs=j3t9&sca_esv=2756be51c2b06d29&sxsrf=ANbL-n5X7GzBYkyFAbE6SPuwJXlYfSadUA:1769445554591&q=quick+tyres+warwick+reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qORI-_gRGsplOIbgTOcCfZLs27KKE0HastebBpaLK_-dIoZ2aaVUizhyqsnl6j_G_AENjLq4FaiKqAkewgYA3Ywzb3_nx5gV3pvQ7cxLCBsxD8cMcfg%3D%3D&sa=X&sqi=2&ved=2ahUKEwi1jOyt0qmSAxWjXUEAHdXtFMkQ9qsLegQIFhAJ&biw=360&bih=648&dpr=3&aic=0#ebo=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-colors border border-white/20"
+            >
+              <div className="flex items-center space-x-1">
+                <FaStar className="text-yellow-400 text-lg" />
+                <FaStar className="text-yellow-400 text-lg" />
+                <FaStar className="text-yellow-400 text-lg" />
+                <FaStar className="text-yellow-400 text-lg" />
+                <FaStar className="text-yellow-400 text-lg" />
+              </div>
+              <span className="text-sm font-semibold text-white">Google Reviews</span>
+            </a>
           </div>
 
           {/* Quick Links */}
