@@ -15,9 +15,9 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="bg-primary shadow-lg sticky top-0 z-50 py-0">
+    <nav className="bg-primary shadow-lg sticky top-0 z-50 py-0" style={{ position: 'sticky', top: 0 }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24">
+        <div className="flex justify-between items-center h-24 relative">
           {/* Logo */}
           <Link href="/" className="flex items-center h-full">
             <div className="relative h-full w-80 bg-primary">
@@ -53,24 +53,32 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-secondary"
+            className="md:hidden text-black bg-white/20 hover:bg-white/30 rounded-lg p-3 transition-colors flex items-center justify-center min-w-[44px] min-h-[44px] z-50 relative"
             onClick={() => setIsOpen(!isOpen)}
+            onTouchStart={(e) => e.stopPropagation()}
             aria-label="Toggle menu"
+            type="button"
+            style={{ 
+              display: 'flex',
+              visibility: 'visible',
+              opacity: 1,
+              WebkitTapHighlightColor: 'rgba(0, 0, 0, 0.1)'
+            }}
           >
-            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            {isOpen ? <FaTimes size={24} className="text-black" /> : <FaBars size={24} className="text-black" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-primary border-t">
-          <div className="px-4 pt-2 pb-4 space-y-2">
+        <div className="md:hidden bg-primary border-t border-black/20 shadow-lg" style={{ zIndex: 50 }}>
+          <div className="px-4 pt-4 pb-4 space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2 text-secondary hover:text-[#ff4126] transition-colors font-medium"
+                className="block py-3 text-black font-semibold hover:text-[#ff4126] transition-colors text-lg border-b border-black/10"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -78,7 +86,7 @@ export default function Navbar() {
             ))}
             <a
               href="tel:07578767977"
-              className="block bg-primary text-black px-6 py-2 rounded-lg hover:bg-[#ff4126] transition-colors text-center font-semibold"
+              className="block bg-black text-white px-6 py-3 rounded-lg hover:bg-[#ff4126] transition-colors text-center font-semibold mt-4"
               onClick={() => setIsOpen(false)}
             >
               <span className="flex items-center justify-center space-x-2">

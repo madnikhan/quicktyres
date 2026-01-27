@@ -40,3 +40,18 @@ a {
     text-wrap: balance;
   }
 }
+
+/* Android-specific fixes */
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  touch-action: manipulation;
+}
+
+/* Ensure mobile menu is visible on Android */
+@media (max-width: 768px) {
+  nav button {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
