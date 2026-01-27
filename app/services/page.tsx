@@ -12,12 +12,12 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Our Services - Tyre Fitting, MOT Checks, Brakes & More | Warwick Quick Tyres',
-  description: 'Professional tyre fitting, MOT checks, brake services, clutch replacement, general car servicing, jump start, and locking wheel nut removal. Available 7 days a week in Warwick.',
+  title: 'Our Services | Tyre Fitting & Car Repairs Warwick',
+  description: 'Tyre fitting, MOT checks, brakes, clutches & car servicing in Warwick. Open 7 days. Jump start & wheel nut removal available.',
   keywords: 'tyre fitting Warwick, MOT checks, brake services, clutch replacement, car servicing, jump start service, wheel nut removal, Warwick garage',
   openGraph: {
-    title: 'Our Services - Warwick Quick Tyres',
-    description: 'Professional tyre fitting, MOT checks, brake services, clutch replacement, and more. Open 7 days a week in Warwick.',
+    title: 'Our Services | Warwick Quick Tyres',
+    description: 'Tyre fitting, MOT checks, brakes, clutches & car servicing in Warwick. Open 7 days a week.',
     url: 'https://www.warwickquicktyres.co.uk/services',
   },
 }

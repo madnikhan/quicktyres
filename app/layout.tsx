@@ -8,8 +8,8 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Warwick Quick Tyres - Professional Tyre & Car Mechanic Services',
-  description: 'Professional tyre fitting, car servicing, MOT checks, brakes, clutches, and more. Open 7 days a week in Warwick. Special offers for NHS workers, taxi drivers, and teachers.',
+  title: 'Warwick Quick Tyres | Tyre Fitting & Car Services',
+  description: 'Professional tyre fitting, MOT checks, brakes, clutches & car servicing in Warwick. Open 7 days. Special offers for NHS, taxi drivers & teachers.',
   keywords: 'tyre fitting, car mechanic, MOT checks, brakes, clutches, Warwick, quick tyres',
   authors: [{ name: 'Warwick Quick Tyres' }],
   creator: 'Warwick Quick Tyres',
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Warwick Quick Tyres - Professional Tyre & Car Mechanic Services',
-    description: 'Professional tyre fitting, car servicing, MOT checks, brakes, clutches, and more. Open 7 days a week in Warwick. Special offers for NHS workers, taxi drivers, and teachers.',
+    title: 'Warwick Quick Tyres | Tyre Fitting & Car Services',
+    description: 'Professional tyre fitting, MOT checks, brakes, clutches & car servicing in Warwick. Open 7 days. Special offers for NHS, taxi drivers & teachers.',
     url: 'https://www.warwickquicktyres.co.uk',
     siteName: 'Warwick Quick Tyres',
     images: [
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Warwick Quick Tyres - Professional Tyre & Car Mechanic Services',
-    description: 'Professional tyre fitting, car servicing, MOT checks, brakes, clutches, and more. Open 7 days a week in Warwick.',
+    title: 'Warwick Quick Tyres | Tyre Fitting & Car Services',
+    description: 'Professional tyre fitting, MOT checks, brakes, clutches & car servicing in Warwick. Open 7 days.',
     images: ['https://www.warwickquicktyres.co.uk/logo.png'],
   },
   icons: {
@@ -77,6 +77,33 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Warwick Quick Tyres',
+    url: 'https://www.warwickquicktyres.co.uk',
+    logo: 'https://www.warwickquicktyres.co.uk/logo.png',
+    image: 'https://www.warwickquicktyres.co.uk/logo.png',
+    description: 'Professional tyre fitting and car mechanic services in Warwick. Open 7 days a week with expert service and competitive prices.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Campbell House, Stratford Road',
+      addressLocality: 'Warwick',
+      postalCode: 'CV34 6RA',
+      addressCountry: 'GB',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+44-7578-767977',
+      contactType: 'Customer Service',
+      areaServed: 'GB',
+      availableLanguage: 'English',
+    },
+    sameAs: [
+      'https://www.google.com/maps/place/Warwick+Quick+Tyres',
+    ],
+  }
+
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'AutomotiveRepair',
@@ -139,6 +166,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
