@@ -16,11 +16,11 @@ export default function Navbar() {
 
   return (
     <nav className="bg-primary shadow-lg sticky top-0 z-50 py-0" style={{ position: 'sticky', top: 0 }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24 relative">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20 md:h-24 relative gap-2">
           {/* Logo */}
-          <Link href="/" className="flex items-center h-full">
-            <div className="relative h-full w-80 bg-primary">
+          <Link href="/" className="flex items-center h-full flex-shrink-0 max-w-[60%] md:max-w-none">
+            <div className="relative h-full w-48 sm:w-56 md:w-64 lg:w-80 bg-primary">
               <Image
                 src="/logo.png"
                 alt="Warwick Quick Tyres Logo"
@@ -53,7 +53,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-black bg-white/20 hover:bg-white/30 rounded-lg p-3 transition-colors flex items-center justify-center min-w-[44px] min-h-[44px] z-50 relative"
+            className="md:hidden text-black bg-white/20 hover:bg-white/30 rounded-lg p-3 transition-colors flex items-center justify-center min-w-[44px] min-h-[44px] z-50 relative flex-shrink-0 ml-2"
             onClick={() => setIsOpen(!isOpen)}
             onTouchStart={(e) => e.stopPropagation()}
             aria-label="Toggle menu"
