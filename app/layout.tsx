@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: 'Warwick Quick Tyres',
     images: [
       {
-        url: 'https://www.warwickquicktyres.co.uk/logo2.png',
+        url: 'https://www.warwickquicktyres.co.uk/logo.png',
         width: 1200,
         height: 630,
         alt: 'Warwick Quick Tyres Logo',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Warwick Quick Tyres - Professional Tyre & Car Mechanic Services',
     description: 'Professional tyre fitting, car servicing, MOT checks, brakes, clutches, and more. Open 7 days a week in Warwick.',
-    images: ['https://www.warwickquicktyres.co.uk/logo2.png'],
+    images: ['https://www.warwickquicktyres.co.uk/logo.png'],
   },
   icons: {
     icon: [

@@ -17,7 +17,7 @@ export default async function Image() {
   try {
     // Fetch the logo image
     const logoResponse = await fetch(
-      new URL('/logo2.png', 'https://www.warwickquicktyres.co.uk'),
+      new URL('/logo.png', 'https://www.warwickquicktyres.co.uk'),
       {
         headers: {
           'Accept': 'image/png,image/*,*/*',
