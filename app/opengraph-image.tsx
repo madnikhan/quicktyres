@@ -14,69 +14,100 @@ export const contentType = 'image/png'
 
 // Image generation
 export default async function Image() {
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          fontSize: 128,
-          background: '#ffcc01',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'relative',
-        }}
-      >
-        <div
-          style={{
-            fontSize: 72,
-            color: '#000000',
-            fontWeight: 'bold',
-            textAlign: 'center',
-            marginBottom: 20,
-            padding: '0 40px',
-          }}
-        >
-          QUICK TYRES
-        </div>
-        <div
-          style={{
-            fontSize: 48,
-            color: '#000000',
-            fontWeight: 'bold',
-            textAlign: 'center',
-            padding: '0 40px',
-            marginBottom: 20,
-          }}
-        >
-          Professional Tyre & Car Mechanic Services
-        </div>
-        <div
-          style={{
-            fontSize: 36,
-            color: '#000000',
-            marginTop: 20,
-            opacity: 0.9,
-          }}
-        >
-          Open 7 Days a Week | Warwick
-        </div>
-        <div
-          style={{
-            fontSize: 28,
-            color: '#000000',
-            marginTop: 10,
-            opacity: 0.8,
-          }}
-        >
-          07578 767977
-        </div>
-      </div>
-    ),
-    {
-      ...size,
+  try {
+    // Fetch the logo image
+    const logoResponse = await fetch(
+      new URL('/logo2.png', 'https://www.warwickquicktyres.co.uk'),
+      {
+        headers: {
+          'Accept': 'image/png,image/*,*/*',
+        },
+      }
+    )
+    
+    if (!logoResponse.ok) {
+      throw new Error('Failed to fetch logo')
     }
-  )
+    
+    const logoBuffer = await logoResponse.arrayBuffer()
+    // Convert ArrayBuffer to base64 for edge runtime
+    const logoBase64 = btoa(
+      String.fromCharCode(...new Uint8Array(logoBuffer))
+    )
+    
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            background: '#ffcc01',
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'relative',
+            padding: '40px',
+          }}
+        >
+          <img
+            src={`data:image/png;base64,${logoBase64}`}
+            alt="Warwick Quick Tyres"
+            width={1000}
+            height={400}
+            style={{
+              objectFit: 'contain',
+            }}
+          />
+        </div>
+      ),
+      {
+        ...size,
+      }
+    )
+  } catch (error) {
+    // Fallback if logo can't be loaded
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            background: '#ffcc01',
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'relative',
+            padding: '40px',
+          }}
+        >
+          <div
+            style={{
+              fontSize: 72,
+              color: '#000000',
+              fontWeight: 'bold',
+              textAlign: 'center',
+            }}
+          >
+            QUICK TYRES
+          </div>
+          <div
+            style={{
+              fontSize: 48,
+              color: '#000000',
+              fontWeight: 'bold',
+              textAlign: 'center',
+              marginTop: 20,
+            }}
+          >
+            Professional Tyre & Car Mechanic Services
+          </div>
+        </div>
+      ),
+      {
+        ...size,
+      }
+    )
+  }
 }
