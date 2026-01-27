@@ -9,6 +9,18 @@ import {
   FaPhone
 } from 'react-icons/fa'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Our Services - Tyre Fitting, MOT Checks, Brakes & More | Warwick Quick Tyres',
+  description: 'Professional tyre fitting, MOT checks, brake services, clutch replacement, general car servicing, jump start, and locking wheel nut removal. Available 7 days a week in Warwick.',
+  keywords: 'tyre fitting Warwick, MOT checks, brake services, clutch replacement, car servicing, jump start service, wheel nut removal, Warwick garage',
+  openGraph: {
+    title: 'Our Services - Warwick Quick Tyres',
+    description: 'Professional tyre fitting, MOT checks, brake services, clutch replacement, and more. Open 7 days a week in Warwick.',
+    url: 'https://www.warwickquicktyres.co.uk/services',
+  },
+}
 
 export default function Services() {
   const services = [

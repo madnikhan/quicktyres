@@ -77,9 +77,72 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AutomotiveRepair',
+    name: 'Warwick Quick Tyres',
+    image: 'https://www.warwickquicktyres.co.uk/logo.png',
+    '@id': 'https://www.warwickquicktyres.co.uk',
+    url: 'https://www.warwickquicktyres.co.uk',
+    telephone: ['07578767977', '01926784473', '07846822488'],
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Campbell House, Stratford Road',
+      addressLocality: 'Warwick',
+      postalCode: 'CV34 6RA',
+      addressCountry: 'GB',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '52.2800',
+      longitude: '-1.5850',
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday',
+        ],
+        opens: '08:30',
+        closes: '18:30',
+      },
+    ],
+    areaServed: {
+      '@type': 'City',
+      name: 'Warwick',
+    },
+    serviceType: [
+      'Tyre Fitting',
+      'MOT Checks',
+      'Brake Services',
+      'Clutch Replacement',
+      'Car Servicing',
+      'Jump Start Service',
+      'Locking Wheel Nut Removal',
+    ],
+    description: 'Professional tyre fitting and car mechanic services in Warwick. Open 7 days a week with expert service and competitive prices.',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  }
+
   return (
     <html lang="en">
       <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         <Navbar />
         <main className="min-h-screen">
           {children}

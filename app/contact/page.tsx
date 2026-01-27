@@ -1,4 +1,16 @@
 import { FaPhone, FaMapMarkerAlt, FaClock, FaEnvelope } from 'react-icons/fa'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Contact Us - Warwick Quick Tyres | Location, Hours & Phone Numbers',
+  description: 'Contact Warwick Quick Tyres at Campbell House, Stratford Road, Warwick CV34 6RA. Open Mon-Sun 8:30 AM - 6:30 PM. Call 07578 767977, 01926 784473, or 07846 822488.',
+  keywords: 'Warwick Quick Tyres contact, tyre fitting Warwick location, car mechanic Warwick, garage Warwick CV34 6RA',
+  openGraph: {
+    title: 'Contact Us - Warwick Quick Tyres',
+    description: 'Visit us at Campbell House, Stratford Road, Warwick CV34 6RA. Open 7 days a week. Call 07578 767977.',
+    url: 'https://www.warwickquicktyres.co.uk/contact',
+  },
+}
 
 export default function Contact() {
   return (

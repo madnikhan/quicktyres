@@ -143,7 +143,7 @@ export default function Home() {
               <div className="relative w-full max-w-2xl h-full flex items-center justify-center bg-primary rounded-lg">
                 <Image
                   src="/logo.png"
-                  alt="Warwick Quick Tyres"
+                  alt="Warwick Quick Tyres - Professional tyre fitting and car mechanic services logo featuring Quick Tyres branding"
                   width={800}
                   height={300}
                   className="object-contain w-full h-full"
