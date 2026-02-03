@@ -10,13 +10,19 @@ import {
   FaPhone,
   FaMapMarkerAlt,
   FaClock,
-  FaStar
+  FaStar,
+  FaPlug
 } from 'react-icons/fa'
 import Image from 'next/image'
 import HeroSlideshow from '@/components/HeroSlideshow'
 
 export default function Home() {
   const services = [
+    {
+      icon: <FaPlug className="text-4xl" />,
+      title: 'Puncture Repair',
+      description: 'Quick puncture repair when it\'s safe—tread punctures up to 6mm. We\'ll tell you honestly if we can repair or if you need a new tyre.',
+    },
     {
       icon: <FaCar className="text-4xl" />,
       title: 'Tyre Fitting',
@@ -173,6 +179,43 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Puncture Repair Highlight */}
+      <section className="py-12 bg-white border-y-4 border-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/services#puncture-repair"
+            className="flex flex-col lg:flex-row items-center gap-6 p-6 md:p-8 bg-primary rounded-xl hover:bg-primary-dark transition-colors group shadow-lg"
+          >
+            <div className="flex-shrink-0 w-full max-w-xs lg:max-w-[280px] aspect-square relative rounded-lg overflow-hidden bg-white/50">
+              <Image
+                src="/puncture-repair-replace.jpeg"
+                alt="Repair or Replace – tread punctures up to 6mm can often be repaired"
+                fill
+                sizes="(max-width: 1024px) 100vw, 280px"
+                className="object-contain p-1"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-6 flex-1 min-w-0">
+              <div className="flex-shrink-0 w-16 h-16 rounded-full bg-black/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaPlug className="text-3xl md:text-4xl text-black" />
+              </div>
+              <div className="text-center sm:text-left flex-1">
+                <span className="text-sm font-semibold uppercase tracking-wide text-black/70">Featured service</span>
+                <h2 className="text-2xl md:text-3xl font-bold text-black mt-1">
+                  Puncture repair – when we can fix it, we will
+                </h2>
+                <p className="text-black/80 mt-2 max-w-xl">
+                  Punctures up to 6mm on the tread can often be repaired. We’ll inspect and give you an honest repair-or-replace recommendation.
+                </p>
+              </div>
+              <span className="flex-shrink-0 px-6 py-3 bg-black text-primary font-semibold rounded-lg group-hover:bg-black/90 transition-colors">
+                Learn more →
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 
