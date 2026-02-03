@@ -6,9 +6,11 @@ import {
   FaTools, 
   FaBolt, 
   FaKey,
-  FaPhone
+  FaPhone,
+  FaPlug
 } from 'react-icons/fa'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -24,6 +26,18 @@ export const metadata: Metadata = {
 
 export default function Services() {
   const services = [
+    {
+      icon: <FaPlug className="text-5xl" />,
+      title: 'Puncture Repair',
+      description: 'Quick puncture repair when it\'s safe to do so. We can repair punctures, nails, holes or cuts up to 6mm on the tyre tread. Not all damage can be repaired—see our Repair or Replace guide below.',
+      features: [
+        'Punctures up to 6mm on the tread',
+        'Nail and screw removal',
+        'Professional repair plugs',
+        'Quick turnaround',
+        'Quality checked',
+      ],
+    },
     {
       icon: <FaCar className="text-5xl" />,
       title: 'Tyre Fitting & Replacement',
@@ -159,6 +173,55 @@ export default function Services() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Puncture Repair – Repair or Replace Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-bold text-secondary mb-4">Puncture Repair</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Not every puncture means a new tyre. We can repair tread damage when it&apos;s safe—and we&apos;ll tell you when replacement is the right option.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-gray-50 rounded-xl p-6 md:p-10">
+            <div className="relative w-full max-w-lg mx-auto lg:mx-0 flex justify-center">
+              <Image
+                src="/puncture-repair-replace.jpeg"
+                alt="Repair or Replace – When we can repair tread punctures (green) and when you need a new tyre (sidewall or severe damage)"
+                width={600}
+                height={600}
+                className="object-contain rounded-lg w-full h-auto"
+              />
+            </div>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-bold text-green-700 mb-3">✓ We can REPAIR</h3>
+                <ul className="text-gray-700 space-y-2">
+                  <li>• Punctures, nails, holes or cuts <strong>up to 6mm on the tyre tread</strong></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-red-700 mb-3">✗ You need to REPLACE</h3>
+                <ul className="text-gray-700 space-y-2">
+                  <li>• Punctures <strong>larger than 6mm</strong> on the tread</li>
+                  <li>• <strong>Any sidewall</strong> punctures or damage</li>
+                  <li>• Tyres worn <strong>below the tread wear indicators</strong></li>
+                </ul>
+              </div>
+              <p className="text-gray-600">
+                We&apos;ll inspect your tyre and give you an honest recommendation—repair when it&apos;s safe, replace when it&apos;s not.
+              </p>
+              <a
+                href="tel:07578767977"
+                className="inline-flex items-center gap-2 bg-primary text-black px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
+              >
+                <FaPhone />
+                Call for puncture repair
+              </a>
+            </div>
           </div>
         </div>
       </section>

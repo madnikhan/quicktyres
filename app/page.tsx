@@ -13,6 +13,7 @@ import {
   FaStar
 } from 'react-icons/fa'
 import Image from 'next/image'
+import HeroSlideshow from '@/components/HeroSlideshow'
 
 export default function Home() {
   const services = [
@@ -140,17 +141,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative h-64 lg:h-96 flex items-center justify-center">
-              <div className="relative w-full max-w-2xl h-full flex items-center justify-center bg-primary rounded-lg">
-                <Image
-                  src="/logo.png"
-                  alt="Warwick Quick Tyres - Professional tyre fitting and car mechanic services logo featuring Quick Tyres branding"
-                  width={800}
-                  height={300}
-                  className="object-contain w-full h-full"
-                  style={{ filter: 'brightness(1.15) contrast(1.1) saturate(1.2)' }}
-                  priority
-                />
-              </div>
+              <HeroSlideshow />
             </div>
           </div>
         </div>
